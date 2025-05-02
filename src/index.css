@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +100,13 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(90deg, rgba(30,58,138,0.95), rgba(59,130,246,0.90));
+  }
+  
+  .btn-gradient {
+    background: linear-gradient(90deg, #F97316, #FB923C);
   }
 }
