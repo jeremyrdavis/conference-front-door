@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-xl font-display font-bold mb-4">TechForward</h3>
+            <h3 className="text-xl font-display font-bold mb-4">DDD Workshop</h3>
             <p className="text-gray-400 mb-4">
               The premier conference for tech innovation and future trends.
             </p>
@@ -56,14 +56,14 @@ const Footer = () => {
             <h3 className="text-lg font-medium mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
               <li>San Francisco, CA</li>
-              <li>info@techforward.com</li>
+              <li>info@dddworkshop.com</li>
               <li>(123) 456-7890</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 mt-8 text-sm text-gray-400 flex flex-col md:flex-row justify-between">
           <div className="mb-4 md:mb-0">
-            &copy; 2025 TechForward Conference. All rights reserved.
+            &copy; 2025 DDD Workshop Conference. All rights reserved.
           </div>
           <div className="flex space-x-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>

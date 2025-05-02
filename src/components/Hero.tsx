@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="container relative z-10 px-6 md:px-12 text-white">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold mb-6 tracking-tight">
-            TECH<span className="text-conference-accent">FORWARD</span> 2025
+            DDD <span className="text-conference-accent">Workshop</span> 2025
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-light opacity-90">
             Shaping the Future of Technology and Innovation

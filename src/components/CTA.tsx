@@ -7,7 +7,7 @@ const CTA = () => {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
           <div className="md:w-2/3">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Ready to Join TechForward 2025?</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Ready to Join DDD Workshop 2025?</h2>
             <p className="opacity-90 text-lg">
               Reserve your spot today and be part of the most innovative tech conference of the year. Early-bird pricing available until December 1st.
             </p>

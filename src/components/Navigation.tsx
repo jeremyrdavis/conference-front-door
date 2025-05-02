@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -29,8 +28,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center text-2xl font-display font-bold">
-            <span>TECH</span>
-            <span className="text-conference-accent">FORWARD</span>
+            <span>DDD</span>
+            <span className="text-conference-accent">Workshop</span>
           </a>
           
           {/* Desktop Navigation */}
