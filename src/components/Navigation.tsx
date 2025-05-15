@@ -1,5 +1,7 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,8 +52,9 @@ const Navigation = () => {
                   ? "bg-conference-blue text-white hover:bg-conference-blue/90" 
                   : "bg-white text-conference-blue hover:bg-white/90"
               }`}
+              asChild
             >
-              Register Now
+              <Link to="/register">Register Now</Link>
             </Button>
           </div>
           
@@ -129,8 +132,9 @@ const Navigation = () => {
                       ? "bg-conference-blue text-white hover:bg-conference-blue/90" 
                       : "bg-white text-conference-blue hover:bg-white/90"
                   }`}
+                  asChild
                 >
-                  Register Now
+                  <Link to="/register">Register Now</Link>
                 </Button>
               </div>
             </div>

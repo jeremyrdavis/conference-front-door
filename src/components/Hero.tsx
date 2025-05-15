@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -36,8 +37,8 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="btn-gradient text-white hover:opacity-90 transition-opacity">
-              Register Now
+            <Button size="lg" className="btn-gradient text-white hover:opacity-90 transition-opacity" asChild>
+              <Link to="/register">Register Now</Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-conference-blue transition-colors">
               View Schedule
