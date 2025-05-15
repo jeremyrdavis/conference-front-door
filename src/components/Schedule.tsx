@@ -12,7 +12,7 @@ const scheduleData = {
     isKeynote: true
   },
   lunch: {
-    time: "12:30 PM - 1:30 PM",
+    time: "12:00 PM - 1:00 PM",  // Updated time to follow after the second session
     title: "Lunch Break",
     location: "Dining Hall",
     isBreak: true
@@ -44,19 +44,19 @@ const scheduleData = {
       location: "Room A"
     },
     {
-      time: "1:45 PM - 2:30 PM",
+      time: "1:15 PM - 2:00 PM", // Updated time to follow after lunch
       title: "Event Sourcing Fundamentals",
       speaker: "Alex Johnson, Eventify",
       location: "Room A"
     },
     {
-      time: "2:45 PM - 3:30 PM",
+      time: "2:15 PM - 3:00 PM",
       title: "CQRS in Practice",
       speaker: "Lisa Chen, Axon Framework",
       location: "Room A"
     },
     {
-      time: "3:45 PM - 4:00 PM",
+      time: "3:15 PM - 4:00 PM", // Adjusted afternoon schedule
       title: "Break",
       location: "Atrium",
       isBreak: true
@@ -76,19 +76,19 @@ const scheduleData = {
       location: "Room B"
     },
     {
-      time: "1:45 PM - 2:30 PM",
+      time: "1:15 PM - 2:00 PM", // Updated time to follow after lunch
       title: "Implementing Aggregates",
       speaker: "David Martinez, DDD Practitioners",
       location: "Room B"
     },
     {
-      time: "2:45 PM - 3:30 PM",
+      time: "2:15 PM - 3:00 PM",
       title: "Value Objects vs Entities",
       speaker: "Sandra Wilson, Object Design Co",
       location: "Room B"
     },
     {
-      time: "3:45 PM - 4:00 PM",
+      time: "3:15 PM - 4:00 PM", // Adjusted afternoon schedule
       title: "Break",
       location: "Atrium",
       isBreak: true
@@ -168,9 +168,9 @@ const Schedule = () => {
           {/* Opening Keynote */}
           <ScheduleItem {...scheduleData.morningKeynote} />
           
-          {/* Parallel Tracks */}
+          {/* Parallel Tracks - First Two Sessions */}
           <div className="my-8">
-            <h4 className="text-lg font-bold mb-4 text-center">Parallel Sessions</h4>
+            <h4 className="text-lg font-bold mb-4 text-center">Morning Sessions</h4>
             
             <div className="overflow-x-auto">
               <Table>
@@ -182,8 +182,51 @@ const Schedule = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {scheduleData.trackA.map((sessionA, index) => {
+                  {scheduleData.trackA.slice(0, 2).map((sessionA, index) => {
                     const sessionB = scheduleData.trackB[index];
+                    
+                    return (
+                      <TableRow key={index}>
+                        <TableCell className="font-medium">{sessionA.time}</TableCell>
+                        <TableCell>
+                          <div>
+                            <p className="font-medium">{sessionA.title}</p>
+                            <p className="text-sm text-gray-600">{sessionA.speaker}</p>
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <div>
+                            <p className="font-medium">{sessionB.title}</p>
+                            <p className="text-sm text-gray-600">{sessionB.speaker}</p>
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+          
+          {/* Lunch Break - Moved after the second parallel session */}
+          <ScheduleItem {...scheduleData.lunch} />
+          
+          {/* Parallel Tracks - Remaining Sessions */}
+          <div className="my-8">
+            <h4 className="text-lg font-bold mb-4 text-center">Afternoon Sessions</h4>
+            
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="w-1/4">Time</TableHead>
+                    <TableHead className="w-[37.5%]">Track A (Room A)</TableHead>
+                    <TableHead className="w-[37.5%]">Track B (Room B)</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {scheduleData.trackA.slice(2).map((sessionA, index) => {
+                    const sessionB = scheduleData.trackB[index + 2];
                     
                     // If this is a break that appears in both tracks, show it as a spanning row
                     if (sessionA.isBreak && sessionB?.isBreak) {
@@ -222,9 +265,6 @@ const Schedule = () => {
               </Table>
             </div>
           </div>
-          
-          {/* Lunch Break */}
-          <ScheduleItem {...scheduleData.lunch} />
           
           {/* Closing Keynote */}
           <ScheduleItem {...scheduleData.afternoonKeynote} />
