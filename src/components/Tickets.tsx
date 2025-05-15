@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ticketPlans = [
   {
@@ -94,8 +95,9 @@ const Tickets = () => {
                       ? "btn-gradient text-white hover:opacity-90" 
                       : "bg-white/20 hover:bg-white/30"
                   }`}
+                  asChild
                 >
-                  Register Now
+                  <Link to="/register">Register Now</Link>
                 </Button>
               </CardFooter>
             </Card>
